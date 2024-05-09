@@ -1,26 +1,30 @@
 
  // Declare variables
  let nameAndAge = [];
+ let imgStickman = document.getElementById("stickman");
+ let posLeft = 0;
 
 
-function add(){
+function add(name, age){
+
+    let person = new clsPerson();
+
     let docValues = [];
 
-    docValues.push(document.getElementById("name").value);
-    docValues.push(document.getElementById("age").value);    
-
-    nameAndAge.push(docValues);
+    docValues.push(person);       
 
     document.getElementById("name").value = "";
     document.getElementById("age").value = "";
 
-    alert(nameAndAge);
+    person.ShowPerson();
 }
 
 
 function run(){
     // Declarations
     let tblDisplay = document.getElementById("tblDisplay");
+
+    animateMan();
     
     let strInnerHtml = "<tr> <td><b>Name</b></td>  <td><b>Age</b></td> <td><b>Old?</b></td> </tr> ";
 
@@ -46,5 +50,49 @@ function run(){
 
 }
 
+function animateMan(){    
+
+    imgStickman.style.display = "block";
+    imgStickman.style.left = posLeft + "px";
+
+    posLeft += 7;
+
+    
+
+    if(posLeft < 1300){
+        requestAnimationFrame(animateMan);
+    }
+
+}
+
+class clsPerson{
+  
+
+    constructor(name,age){
+        this.varName = name;
+        this.varAge = age;
+    }
+
+    get name(){
+        return this.varName;
+    }
+
+    set name(prmName){
+        this.varName = prmName;
+    }
+
+    get age(){
+        this.varAge;
+    }
+
+    set age(prmAge){
+        this.varAge = prmAge;
+    }
+
+    ShowPerson(){
+         alert(this.varName + " , " + this.varAge);
+    }
+
+}
 
 

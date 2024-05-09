@@ -26,10 +26,12 @@
             <p id="dsff">My age is : </p>
             <input type="text" id="age">
             <br><br>            
-            <button onclick="add();">Add</button>
+            <button onclick="add(document.getElementById('name').value,document.getElementById('age').value);">Add</button>
             <br><br>
             <br><br>
             <button onclick="run();">Run</button>
+            <br>
+            <img class="stickman" src="assets/images/stickman.png" id="stickman">
             <br><br>
             <br><br>
             <table id="tblDisplay">
