@@ -1,14 +1,11 @@
-.par1{
-    color:red;
-}
-.par2,.Info{
-    color:green;
-    font-size: 14px;
-}
-.stickman{
-    position: relative;
-    display: none;
-    height: 150px;
-    width: auto;
+.menuDropdown{
+
+    display:none;
+    background-color: rgb(235,231,220);
+    font-size: large;
+    font-weight: bolder;
+    list-style-type: none;
+    z-index: 1;
+
 }
 
